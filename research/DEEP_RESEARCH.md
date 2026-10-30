@@ -4,6 +4,34 @@
 **Copyright:** © 2026 Sandeep Barupal. All rights reserved, except as stated below.  
 **Research status:** Detailed research draft — alerts aur integrations ko test environment mein test karna hoga.
 
+## Research Overview
+
+| Item | Details |
+|---|---|
+| Product | OpsWatch |
+| Main focus | Application, server aur service monitoring |
+| Language | Aasaan Hindi + simple English |
+| Owner / Content Creator | Sandeep Barupal |
+| Copyright | © 2026 Sandeep Barupal |
+
+## Table of Contents
+
+- [1. OpsWatch kya hai?](#1-opswatch-kya-hai)
+- [2. Kiske kaam aayega?](#2-kiske-kaam-aayega)
+- [3. Similar tools se kya seekhein?](#3-similar-tools-se-kya-seekhein)
+- [4. Main features](#4-main-features)
+- [5. Pages / screens](#5-pages-screens)
+- [6. Main workflow](#6-main-workflow)
+- [7. Technical planning](#7-technical-planning)
+- [8. Security](#8-security)
+- [9. Development phases](#9-development-phases)
+- [10. Success metrics](#10-success-metrics)
+- [11. Risks](#11-risks)
+- [12. Original product idea](#12-original-product-idea)
+- [13. Sources](#13-sources)
+
+---
+
 ## 1. OpsWatch kya hai?
 OpsWatch website, app aur servers ki health dekhne ka tool ho sakta hai. System slow ho, error aaye ya service down ho to team ko pata chale aur woh issue jaldi solve kar sake.
 
@@ -61,3 +89,4 @@ Alert ke saath sirf error na dikhayein—related deployment, owner, runbook aur 
 - [Prometheus documentation](https://prometheus.io/docs/introduction/overview/)
 
 **Note:** OpenTelemetry data collect karne ka framework hai; ye apne aap complete monitoring service nahi hai.
+
