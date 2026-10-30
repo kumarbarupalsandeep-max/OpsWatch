@@ -63,3 +63,29 @@ Risks: alert noise, cardinality explosion, high telemetry cost, missing data, fa
 
 ## 12. Next work
 Build a dated capability matrix, decide whether OpsWatch stores telemetry or integrates with existing backends, specify incident states and alert deduplication, then run an on-call usability test.
+
+## 15. Deep research addendum — evidence and product decisions
+
+### Market evidence
+OpenTelemetry describes a vendor-neutral observability framework for generating, collecting, processing, and exporting telemetry. Its signals documentation distinguishes traces (request paths), metrics (runtime measurements), and logs (events/records). AWS Well-Architected emphasizes operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability as architecture pillars. Sources: [OpenTelemetry docs](https://opentelemetry.io/docs/), [Signals](https://opentelemetry.io/docs/concepts/signals/), [AWS Well-Architected pillars](https://docs.aws.amazon.com/wellarchitected/2024-06-27/framework/the-pillars-of-the-framework.html).
+
+### Competitive implications
+OpsWatch should avoid becoming a dashboard-only product. Its core loop should be detect → correlate → assign → investigate → mitigate → learn. Use open telemetry conventions where possible to reduce vendor lock-in, and make alert quality and operator context first-class product metrics.
+
+### Recommended core workflows
+1. Ingest metrics, logs, and traces via agents, collectors, or supported APIs.
+2. Explore service maps and correlate telemetry around a trace ID, deployment, or incident.
+3. Define alert rules with thresholds, windows, grouping, deduplication, and severity.
+4. Route notifications with on-call schedules, escalation policies, and suppression windows.
+5. Create an incident timeline with deploy markers, related alerts, runbooks, and actions.
+6. Build SLOs and error-budget views from explicit SLIs.
+7. Review recurring alerts, noisy rules, and post-incident follow-up tasks.
+
+### Architecture and reliability
+Model Service, Environment, TelemetrySource, MetricSeries, LogEvent, Trace, AlertRule, Alert, Incident, SLO, OnCallSchedule, and Runbook. Telemetry is high-volume: apply retention tiers, cardinality limits, sampling, backpressure, and tenant quotas. Avoid labels containing secrets or personal data. Alert delivery should be retryable and idempotent; monitor the monitoring pipeline itself.
+
+### Validation and success measures
+Track detection latency, alert precision, mean time to acknowledge/mitigate, noisy-alert ratio, SLO burn, telemetry ingest lag, query latency, and cost per GB or active service. Use incident simulations to test escalation and recovery.
+
+### Sources and caveats
+OpenTelemetry is an instrumentation/telemetry standard, not a full hosted monitoring product. Vendor capabilities, ingestion pricing, retention, and SLO feature limits require separate validation.
