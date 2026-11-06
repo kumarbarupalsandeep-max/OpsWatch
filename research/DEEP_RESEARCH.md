@@ -90,3 +90,46 @@ Alert ke saath sirf error na dikhayein—related deployment, owner, runbook aur 
 
 **Note:** OpenTelemetry data collect karne ka framework hai; ye apne aap complete monitoring service nahi hai.
 
+
+
+## 14. Competitor reference research — Datadog aur Grafana
+
+### Reference URLs
+- Datadog: https://www.datadoghq.com/
+- Datadog docs: https://docs.datadoghq.com/
+- Grafana: https://grafana.com/
+- Grafana documentation: https://grafana.com/docs/
+
+### Datadog se kya samajh aata hai?
+Datadog observability platform metrics, logs, traces, infrastructure, application performance, dashboards, monitors, incident workflows, integrations aur automation ko ek platform mein connect karta hai. Official docs dashboards, monitors, integrations aur OpenTelemetry setup ko core getting-started paths mein rakhti hain.
+
+### Grafana se kya samajh aata hai?
+Grafana dashboards aur data visualization ke through multiple data sources ko explore karne ka flexible model deta hai. Open-source ecosystem aur integrations observability UI ko different telemetry backends ke saath use karne ka option dete hain.
+
+### Pages / feature map
+1. Global service health dashboard
+2. Service catalog and ownership
+3. Infrastructure hosts / containers
+4. Metrics explorer
+5. Logs explorer
+6. Distributed traces
+7. Dashboards and dashboard folders
+8. Monitors / alert rules
+9. Incident timeline and responders
+10. SLO / error budget
+11. Integrations and data sources
+12. On-call and notification settings
+13. Telemetry ingestion health and billing/usage
+
+### Important workflow
+Telemetry source connect → agent/collector configure → metrics/logs/traces ingest → service dashboard create → threshold/anomaly monitor define → alert route → incident investigate → postmortem and SLO review.
+
+### Original OpsWatch direction
+Datadog ki end-to-end observability aur Grafana ki dashboard flexibility se learning lein. OpsWatch ka unique service-first view ho: har service par owner, dependencies, recent deploys, SLO, open incidents aur runbook ek saath.
+
+### Design / implementation cautions
+- Metrics, logs aur traces ko same data type na samjhein; correlation IDs and timestamps useful hain.
+- Alert deduplication, grouping, mute windows and escalation zaroori hain.
+- Telemetry retention, cardinality aur ingestion cost monitor karein.
+- Dashboard visualization ke saath data freshness and source label dikhayein.
+
